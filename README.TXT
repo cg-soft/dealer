@@ -1,4 +1,11 @@
-# $Header: /home/sater/bridge/bigdeal/RCS/README.txt,v 1.7 2000/07/12 18:43:11 sater Exp sater $
+Update for 1.3:
+
+Replicated into a github repo. Only tested builds on MacOS,
+will assume linux will work too.
+
+Original README follows:
+
+----8<--------------------------------------------------------
 
 		How to install and run Big Deal version 1.2
 		September 8, 2012
