@@ -2,8 +2,6 @@
 #include "bigdeal.h"
 #include "mp.h"
 
-static char rcsid[] = "$Header: /home/sater/bridge/bigdeal/RCS/binomial.c,v 1.11 2000/08/16 15:06:30 sater Exp $";
-
 /*
  * functions implementing or using the (n over k) mathematical construct
  */
@@ -11,7 +9,7 @@ static char rcsid[] = "$Header: /home/sater/bridge/bigdeal/RCS/binomial.c,v 1.11
 static byte pascal_triangle[NCARDSPERDECK+1][NCARDSPERHAND+1][L];
 
 void
-binomial_start()
+binomial_start(void)
 /*
  * Precomputes all numbers (n over k) with k<=NCARDSPERHAND and
  * n<=NCARDSPERDECK.

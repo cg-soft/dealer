@@ -2,12 +2,11 @@
  * Collect various pieces of randomness
  */
 
-static char rcsid[] = "$Header: /home/sater/bridge/bigdeal/RCS/collect.c,v 1.7 2000/08/25 15:55:26 sater Exp $";
+#include <stdio.h>
 
 #include "types.h"
 #include "rmd160.h"
 #include "bigdeal.h"
-#include <stdio.h>
 
 static dword MDbuf[RMDdwords];		/* Contains state of RIPEMD-160 */
 static byte variousbytes[64];
@@ -21,7 +20,7 @@ extern FILE *flog;
 #endif
 
 void
-collect_start()
+collect_start(void)
 /*
  * Set everything to zero, and init the hashing engine
  */

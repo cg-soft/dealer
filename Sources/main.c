@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <getopt.h>
 
 #include "types.h"
 #include "rmd160.h"
@@ -10,8 +11,6 @@
 #include "output.h"
 #include "os.h"
 #include "collect.h"
-
-static char rcsid[] = "$Header: /home/sater/bridge/bigdeal/RCS/main.c,v 1.26 2000/09/08 05:13:44 sater Exp $";
 
 #define MESSLEN		100			/* Length of input buffer(s) */
 #define ENTROPY_TO_COLLECT	RMDsize*4/3	/* 33% extra safety/paranoia */
@@ -380,7 +379,7 @@ goedel(dl_num *dnp)
 extern int nrandombits;
 
 static void
-get_entropy_from_keyboard() {
+get_entropy_from_keyboard(void) {
 	int c, oldc;
 	int nbits;
 

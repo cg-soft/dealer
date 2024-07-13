@@ -15,12 +15,11 @@
  *
 \********************************************************************/
 
-static char rcsid[] = "$Header: /home/sater/bridge/bigdeal/RCS/rmd160.c,v 1.2 1999/11/28 13:12:21 sater Exp $";
-
 /*  header files */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include "types.h"
 #include "rmd160.h"      
 

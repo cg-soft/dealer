@@ -1,12 +1,11 @@
-
-static char rcsid[] = "$Header: /home/sater/bridge/bigdeal/RCS/unix.c,v 1.11 2000/08/25 15:55:53 sater Exp $";
-
 #include <sys/termios.h>
 #include <sys/time.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <string.h>
+
 #include "types.h"
 #include "bigdeal.h"
 #include "collect.h"
@@ -94,7 +93,7 @@ getchtm(int *nbits)
 }
 
 void
-os_collect() {
+os_collect(void) {
 	int pid;
 	struct timeval t;
 
@@ -105,14 +104,14 @@ os_collect() {
 	/* Trust 6 bits of seconds, and half the subsecond bits */
 	collect_more((byte *) &t, sizeof(t), 6+subsecbits/2);
 	if (flog)
-		fprintf(flog, "First TOD=(%ld, %ld), subsecbits = %d\n",
+		fprintf(flog, "First TOD=(%ld, %d), subsecbits = %d\n",
 			t.tv_sec, t.tv_usec, subsecbits);
 }
 
 static struct termios tios;
 
 void
-cbreak()
+cbreak(void)
 /*
  * Set terminal to state where characters can be read one at a time
  * Also disable echo
@@ -130,7 +129,7 @@ cbreak()
 }
 
 void
-cooked()
+cooked(void)
 /*
  * Reset terminal to original state
  */
@@ -140,13 +139,13 @@ cooked()
 }
 
 void
-os_start() {
+os_start(void) {
 
 	ioctl(0, GTTY, &tios);
 }
 
 void
-os_finish() {
+os_finish(void) {
 
 	cooked();
 }
@@ -170,7 +169,7 @@ legal_filename_prefix(char *s)
 	return 1;
 }
 
-char *os_init_file_name()
+char *os_init_file_name(void)
 {
 
 	return ".bigdealrc";

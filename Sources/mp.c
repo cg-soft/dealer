@@ -1,8 +1,7 @@
-#include "types.h"
-#include "bigdeal.h"
 #include <memory.h>
 
-static char rcsid[] = "$Header: /home/sater/bridge/bigdeal/RCS/mp.c,v 1.10 2000/08/16 15:06:05 sater Exp $";
+#include "types.h"
+#include "bigdeal.h"
 
 /*
  * Multiple precision arithmetic
